@@ -20,6 +20,6 @@ The second player (or the computer) takes their turn by clicking on another empt
 Players continue taking turns until there is a winner or a tie.
 To restart the game, click on the "Restart" button.
 Demo
-You can play the game by visiting the Tic-Tac-Toe Game Demo.
+You can play the game by visiting the Tic-Tac-Toe Game Demo (https://madhu-1729.github.io/tic-tac-toe/).
 
 Feel free to customize and enhance the README file based on your specific implementation and preferences.
