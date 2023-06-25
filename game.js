@@ -35,7 +35,7 @@ function makeMove(row,col){
     else if(!gameStillOn(gameBoard)){
         setTimeout(() => {
             alert("Hello, Game is Draw " );
-        }, 9000);
+        }, 100);
     }
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
 
