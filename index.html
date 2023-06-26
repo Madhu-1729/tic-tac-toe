@@ -5,48 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <script src="./game.js"></script>
-    <script src="./styles.css"></script>
+    <!-- <script src="styles.scss"></script> -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
   </head>
-  <body class="bg-dark-subtle">
+  <body class="body_theme">
     
-<div class="h-100 d-flex align-items-center justify-content-center flex-column">
-    <div>
-        <h1 class="text-body-emphasis">Tik Tak Toe</h1>
+<div class="container_main">
+    <div class="head-title">
+        <h1 class=" ">Tik Tak Toe</h1>
+    </div>
+    <div class="Current_player">
+        <h6 id="turn">Current player: X</h6>
     </div>
 
-    <div class="p-3">
-        <div class="w-auto  d-flex align-items-center justify-content-center">
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="0-0" onclick="makeMove(0,0)" >
+    <div class="container_box">
+        <div class="container_h">
+            <div class="box" id="0-0" onclick="makeMove(0,0)" > 
             </div>
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="0-1" onclick="makeMove(0,1)">
+            <div class="box" id="0-1" onclick="makeMove(0,1)">
                 
             </div>
-            <div  class="w-25 p-5 m-2 bg-body-tertiary rounded" id="0-2" onclick="makeMove(0,2)">
+            <div  class="box" id="0-2" onclick="makeMove(0,2)">
                 
             </div>
         </div>    
         
-        <div class="w-auto  d-flex align-items-center justify-content-center">
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="1-0" onclick="makeMove(1,0)" >
+        <div class="container_h">
+            <div class="box" id="1-0" onclick="makeMove(1,0)" >
             </div>
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="1-1" onclick="makeMove(1,1)">
+            <div class="box" id="1-1" onclick="makeMove(1,1)">
                 
             </div>
-            <div  class="w-25 p-5 m-2 bg-body-tertiary rounded" id="1-2" onclick="makeMove(1,2)">
+            <div  class="box" id="1-2" onclick="makeMove(1,2)">
                 
             </div>
         </div> 
 
-        <div class="w-auto  d-flex align-items-center justify-content-center">
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="2-0" onclick="makeMove(2,0)" >
+        <div class="container_h">
+            <div class="box" id="2-0" onclick="makeMove(2,0)" >
             </div>
-            <div class="w-25 p-5 m-2 bg-body-tertiary rounded" id="2-1" onclick="makeMove(2,1)">
+            <div class="box" id="2-1" onclick="makeMove(2,1)">
                 
             </div>
-            <div  class="w-25 p-5 m-2 bg-body-tertiary rounded" id="2-2" onclick="makeMove(2,2)">
+            <div  class="box" id="2-2" onclick="makeMove(2,2)">
                 
             </div>
         </div> 
@@ -54,7 +59,7 @@
 
     <div>
         <div>
-            <button class="btn btn-primary" onclick="setDefaultBoard()">
+            <button class="reset-button" onclick="setDefaultBoard()">
                 Reset
             </button>
         </div>

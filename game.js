@@ -11,13 +11,13 @@ function setDefaultBoard(){
         [ "", "", ""] 
     ];
     gameFinished = false;
-currentPlayer = "X"
+    currentPlayer = "X";
+    setCurrentPlayer()
     resetBoard(); 
 }
 
 gameFinished = false;
 currentPlayer = "X"
-
 function makeMove(row,col){
     let box = document.getElementById(row+"-"+col)
  if(!gameFinished && (box.textContent != "X") && (box.textContent != "O") ){
@@ -26,7 +26,7 @@ function makeMove(row,col){
     if(checkWin(gameBoard,currentPlayer)){
         gameFinished = true
         setTimeout(() => {
-            if (window.confirm("Player "+currentPlayer+ " Win's.   Do you want to play again?")) {
+            if (window.confirm("Player "+( (currentPlayer == "X") ? "O" : "X")+" win's. "+"Do you want to play again?")) {
                 setDefaultBoard();   
                
               }
@@ -38,8 +38,14 @@ function makeMove(row,col){
         }, 100);
     }
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    setCurrentPlayer()
 
  } 
+}
+
+function setCurrentPlayer(){
+    let turn = document.getElementById("turn")
+    turn.innerText = "Current player: "+ currentPlayer
 }
 function checkWin(board,currentPlayer){
  if((
@@ -80,5 +86,5 @@ function gameStillOn(board){
 
 function resetBoard(){
     //  setDefaultBoard(); 
-$(".rounded").map(function(element, index) {index.textContent = ""});
+$(".box").map(function(element, index) {index.textContent = ""});
 }
