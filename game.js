@@ -26,7 +26,7 @@ function makeMove(row,col){
     if(checkWin(gameBoard,currentPlayer)){
         gameFinished = true
         setTimeout(() => {
-            if (window.confirm("Do you want to play again?")) {
+            if (window.confirm("Player "+currentPlayer+ " Win's.   Do you want to play again?")) {
                 setDefaultBoard();   
                
               }
