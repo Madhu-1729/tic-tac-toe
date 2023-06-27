@@ -1,5 +1,11 @@
-.body_theme {
-  background-color: #fff;
+.body_theme { 
+  background-color: #fff; overflow: hidden;  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none;
+
+
+
   .container_main {
     width: fit-content; height: 80%; margin: 0 auto;
     display: flex; justify-content: center; display: flex;
@@ -12,10 +18,15 @@
           width: 100px; height: 100px !important; display: inline-block;
           background: #111; color: #fff; overflow: auto; text-align: center;
           line-height: 100px; font-size: 35px; font-weight: 900; font-style: italic;
-        }
+          cursor: pointer;
+          @media (max-width: 380px) {
+            /* CSS rules for small screens */
+            width: 80px; height: 80px;
+          }}
         .box:hover  {
             transform: translateY(2px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, #000000, #333333);
+            transition: box-shadow 0.3s;
           }
           
       }
@@ -82,3 +93,7 @@
     85% { color: #ff00ff; } /* Magenta */
     100% { color: #ff0000; } /* Red */
   }
+
+  canvas{ position: absolute; top: 0; z-index: -9999; overflow: hidden;}
+
+ 
