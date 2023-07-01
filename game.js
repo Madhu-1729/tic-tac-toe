@@ -1,8 +1,7 @@
-gameBoard =  [
-    [ "", "", ""] , 
-    [ "", "", ""] , 
-    [ "", "", ""] 
-];
+window.addEventListener("DOMContentLoaded", function() {
+    // do stuff
+    setDefaultBoard()
+}, false);
 
 function setDefaultBoard(){
     gameBoard =  [
@@ -11,13 +10,17 @@ function setDefaultBoard(){
         [ "", "", ""] 
     ];
     gameFinished = false;
-currentPlayer = "X"
-    resetBoard(); 
+    currentPlayer = "X";
+    try{
+        setCurrentPlayer();
+    }catch(e){
+        console.log(e)
+    }
+    // resetBoard(); 
 }
 
 gameFinished = false;
 currentPlayer = "X"
-
 function makeMove(row,col){
     let box = document.getElementById(row+"-"+col)
  if(!gameFinished && (box.textContent != "X") && (box.textContent != "O") ){
@@ -26,7 +29,7 @@ function makeMove(row,col){
     if(checkWin(gameBoard,currentPlayer)){
         gameFinished = true
         setTimeout(() => {
-            if (window.confirm("Do you want to play again?")) {
+            if (window.confirm("Player "+( (currentPlayer == "X") ? "O" : "X")+" win's. "+"Do you want to play again?")) {
                 setDefaultBoard();   
                
               }
@@ -35,11 +38,19 @@ function makeMove(row,col){
     else if(!gameStillOn(gameBoard)){
         setTimeout(() => {
             alert("Hello, Game is Draw " );
-        }, 9000);
+        }, 100);
     }
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    setCurrentPlayer()
 
  } 
+}
+
+function setCurrentPlayer(){
+    let turn = document.getElementById("turn")
+   if(!!turn){
+    turn.innerText = "Current player: "+ currentPlayer
+   }
 }
 function checkWin(board,currentPlayer){
  if((
@@ -80,5 +91,9 @@ function gameStillOn(board){
 
 function resetBoard(){
     //  setDefaultBoard(); 
-$(".rounded").map(function(element, index) {index.textContent = ""});
+try{
+    $(".box").map(function(element, index) {index.textContent = ""});
+}catch(e){
+    console.log(e)
+}
 }
