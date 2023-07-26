@@ -1,8 +1,5 @@
-window.addEventListener("DOMContentLoaded", function() {
-    // do stuff
-    setDefaultBoard()
-}, false);
-
+      setDefaultBoard()
+ 
 function setDefaultBoard(){
     gameBoard =  [
         [ "", "", ""] , 
@@ -30,7 +27,7 @@ function makeMove(row,col){
         gameFinished = true
         setTimeout(() => {
             if (window.confirm("Player "+( (currentPlayer == "X") ? "O" : "X")+" win's. "+"Do you want to play again?")) {
-                setDefaultBoard();   
+                resetBoard();   
                
               }
         }, 100);
@@ -90,7 +87,7 @@ function gameStillOn(board){
 }
 
 function resetBoard(){
-    //  setDefaultBoard(); 
+     setDefaultBoard(); 
 try{
     $(".box").map(function(element, index) {index.textContent = ""});
 }catch(e){
